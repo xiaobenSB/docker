@@ -25,3 +25,8 @@ xiaoben目录里的shellceshi.sh文件是为了让可以使用pm2管理node但�
 
 
 ceshi/tmp目录的 mysql.js 和 redis.js 分别是mysql和redis连接,域名 == 容器名字
+
+连接第一次连接mysql时可能会爆Client does not support authentication protocol requested by server错误，可切换到mysql容器里执行
+          mysql -uroot -p   
+          ALTER USER ‘root’@’%’ IDENTIFIED WITH mysql_native_password BY ‘123456’;   
+          flush privileges;
