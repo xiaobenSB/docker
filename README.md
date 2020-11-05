@@ -22,3 +22,6 @@ docker rmi (镜像名字或id)   //  删除镜像
 
 
 xiaoben目录里的shellceshi.sh文件是为了让可以使用pm2管理node但容器不停止，因为直接使用pm2会导致容器停止,使用node server.js可以让容器不停止，shellceshi.sh文件避免还要切换到容器里执行pm2
+
+
+ceshi/tmp目录的 mysql.js 和 redis.js 分别是mysql和redis连接,域名 == 容器名字
