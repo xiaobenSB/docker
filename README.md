@@ -6,6 +6,8 @@ docker build -t (镜像名字)  //  根据当前路径下的Dockerfile文件构�
 
 docker run -d（后台运行）-p 3000:8000(把容器里8000端口映射到主机的3000端口) --network test-net(加入test-net网络，其他容器如果也使用这个网络的话，可以进行互联) --name (容器名字) (镜像名字)   //  根据镜像构建容器
 
+docker run -d -v ~/nginx/conf/conf.d:/etc/nginx/conf.d -v ~/nginx/www:/var/www --name nginx-test nginx  //  启用nginx容器并使用 -v 把主机里的~（root）/nginx/conf/conf.d目录挂载到容器里的/etc/nginx/conf.d目录,并且主机里这个目录修改或增加的内容会直接更新到容器这个目录，第二个-v一样意思
+
 
 docker-compose up -d  //  使用Docker Compose 根据当前路径下的docker-compose.yml 文件构建镜像和容器（这个的好处是会帮你把所关联的镜像加入同一个网络里，让他们互联）
 
