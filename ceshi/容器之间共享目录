@@ -1,0 +1,14 @@
+version: '3'
+services:
+  mysql:
+    image: "mysql"
+    volumes:
+           - cesh2-volumes:/run/www           //  把容器/run/www目录跟docker cesh2-volumes目录关联
+    environment:
+       MYSQL_ROOT_PASSWORD: "666666"
+  redis:
+    image: "redis"
+    volumes:
+           - cesh2-volumes:/run/php            //  把容器/run/php目录跟docker cesh2-volumes目录关联
+volumes:             
+   cesh2-volumes:   //  创建docker cesh2-volumes目录,可通过docker volume ls查询docker目录
